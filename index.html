@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7edda" />
+  <title>Pip's Little Post — A woodland route puzzle</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">✉</span><span>PIP'S <strong>LITTLE POST</strong></span></div>
+      <div class="top-right"><span class="edition">A tiny woodland adventure</span><button id="soundBtn" class="icon-btn" type="button" aria-label="Mute sound" title="Toggle sound">♫</button></div>
+    </header>
+
+    <main class="game-layout">
+      <section class="intro-panel">
+        <div class="eyebrow"><span class="eyebrow-line"></span> A STORYBOOK PUZZLE GAME</div>
+        <h1>Every letter<br />has a <em>way home.</em></h1>
+        <p class="story">The woodland paths have disappeared overnight. Luckily, Pip the snail can draw new ones with a trail of trusty ink. Help deliver the morning mail — and find your way back before it runs out.</p>
+        <div class="divider"><span>✳</span></div>
+        <div class="chapter-heading"><span>THE STORY SO FAR</span><span id="chapterNumber">01 / 04</span></div>
+        <h2 id="levelTitle">The first delivery</h2>
+        <p id="levelStory" class="chapter-story">The village is waking up. Three little letters are waiting to find their doors.</p>
+        <div class="how-to">
+          <div class="how-icon">↗</div>
+          <div><strong>Draw Pip's route</strong><span>Drag or tap neighboring squares. You can also use your arrow keys.</span></div>
+        </div>
+        <div class="how-to">
+          <div class="how-icon">⌂</div>
+          <div><strong>Make it a round trip</strong><span>Visit every mailbox, then return to the post office. Tap your last step to undo it.</span></div>
+        </div>
+        <button id="restartBtn" class="text-btn" type="button"><span>↶</span> Start this route over</button>
+      </section>
+
+      <section class="board-section" aria-label="Game board">
+        <div class="board-header"><div><span class="tiny-label">TODAY'S ROUTE</span><div class="board-title" id="boardTitle">The first delivery</div></div><span class="board-flower" aria-hidden="true">✿</span></div>
+        <div class="canvas-wrap"><canvas id="game" width="800" height="700" aria-label="Woodland puzzle board. Draw a path to all houses and return home."></canvas></div>
+        <div class="board-footer"><div class="stat"><span class="stat-icon">✉</span><div><span class="stat-label">LETTERS DELIVERED</span><strong id="mailStat">0 / 3</strong></div></div><div class="stat"><span class="stat-icon ink-icon">◕</span><div><span class="stat-label">INK LEFT</span><strong id="inkStat">28 steps</strong></div></div><div class="stat optional"><span class="stat-icon">✦</span><div><span class="stat-label">BONUS STAMPS</span><strong id="stampStat">0 / 2</strong></div></div></div>
+      </section>
+    </main>
+    <footer class="page-footer"><span>Made for slow mornings & curious minds.</span><div id="levelDots" class="level-dots" aria-label="Choose a chapter"></div><span>Take the scenic route. <span class="footer-heart">♥</span></span></footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-card"><div class="modal-art" id="modalArt">✉</div><span class="modal-eyebrow" id="modalEyebrow">DELIVERY COMPLETE</span><h2 id="modalTitle">A very good day for mail.</h2><p id="modalText"></p><div id="modalStamps" class="modal-stamps"></div><button id="nextBtn" class="primary-btn" type="button">Next chapter <span>→</span></button><button id="replayBtn" class="modal-link" type="button">Play this chapter again</button></div></div>
+  <script src="game.js"></script>
+</body>
+</html>
